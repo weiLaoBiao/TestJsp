@@ -1,0 +1,12 @@
+2017-09-28 08:16:05 com.gitBookDemo.dao.DaoExtension.getConn(DaoExtension.java:26) DaoExtension.java INFO com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2017-09-28 08:16:07 com.gitBookDemo.dao.DaoExtension.getConn(DaoExtension.java:26) DaoExtension.java INFO com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2017-09-28 22:49:00 com.gitBookDemo.dao.DaoExtension.getConn(DaoExtension.java:26) DaoExtension.java INFO com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2017-09-28 22:49:21 com.gitBookDemo.dao.DaoExtension.getConn(DaoExtension.java:26) DaoExtension.java INFO com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.

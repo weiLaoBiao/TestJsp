@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap 的模态盒</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <style>
+        /*region 使用 js 动态触发模态盒*/
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color: white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        /*endregion*/
+    </style>
+</head>
+<body>
+
+<!--region 基本的模态盒-->
+<div id="modalDemo01" class="container">
+
+    <!--模态盒的按钮-->
+    <button class="btn btn-primary"
+            data-toggle="modal" data-target="#myModal01">
+        模态盒触发器按钮 01
+    </button>
+
+    <!--模态盒的容器(用于调整位置/规格)-->
+    <div id="myModal01" class="modal fade">
+        <div class="modal-dialog">
+            <!--模态盒的具体内容-->
+            <div class="modal-content">
+                <!--模态盒的头部,关闭按钮会自动到右侧-->
+                <div class="modal-header">
+                    <!--data-dismiss="modal" 代表关闭模态盒-->
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">模态盒/模式化窗口</h4>
+                </div>
+                <!--模态盒的主体-->
+                <div class="modal-body">
+                    hello modal
+                </div>
+                <!--页尾的文字默认右对齐-->
+                <div class="modal-footer">
+                    页尾
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+</div>
+<!--endregion-->
+
+<!--region 解决多按钮对应同一个模态盒的问题-->
+<div id="modalDemo02" class="container">
+    <button class="btn btn-primary"
+            data-toggle="modal" data-target="#myModal02">
+        触发器按钮 01
+    </button>
+    <button class="btn btn-primary"
+            data-toggle="modal" data-target="#myModal02">
+        触发器按钮 02
+    </button>
+    <button class="btn btn-primary"
+            data-toggle="modal" data-target="#myModal02">
+        触发器按钮 03
+    </button>
+
+    <script>
+        <!--模态盒触发器按钮点击时-->
+        $("#modalDemo02").find("> button").click(function () {
+//            alert($(this).text());
+            //给模态盒的内容赋值
+            $("#modalDemo02").find(".modal-body").text($(this).text() + " 触发了模态盒 !");
+            //这儿发生了一件有趣的事情,触发器单击时,单击事件先发生,而模态盒的显示在后面发生.
+            //利用这个特性,可以对同一个模态盒应用多个类似的触发器,并根据触发器决定模态盒的内容(可能需要 ajax+json 加载数据)
+        });
+    </script>
+
+    <div id="myModal02" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    标题
+                </div>
+                <div class="modal-body">
+                    模态盒的内容
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+</div>
+
+<!--endregion-->
+
+<!--region 使用 js 动态触发模态盒/登陆模板-->
+<div class="container">
+    <!--注意此处并没有 data-toggle 和 data-target 属性-->
+    <button class="btn btn-default " id="loginBtn">登录</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal03" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                            <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="" checked>Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block"><span
+                                class="glyphicon glyphicon-off"></span> Login
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span
+                            class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
+                    <p>Not a member? <a href="#">Sign Up</a></p>
+                    <p>Forgot <a href="#">Password?</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            //此处使用 js 去触发了模态盒
+            $("#loginBtn").click(function () {
+                $("#myModal03").modal();
+            });
+        });
+    </script>
+</div>
+<!--endregion-->
+
+</body>
+</html>

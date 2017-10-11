@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--region mysql 数据库连接配置-->
+
+        <!--mysql 数据库连接驱动类(需要 jdbc 的 jar 包)-->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--mysql 数据库连接字符串-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/GitBookDemo</property>
+        <mapping class="com.untitled1.entity.GbAdmin"/>
+        <mapping class="com.untitled1.entity.GbBlog"/>
+        <mapping class="com.untitled1.entity.GbBlogType"/>
+        <mapping class="com.untitled1.entity.GbBookBasicInfo"/>
+        <mapping class="com.untitled1.entity.GbBookDetailInfo"/>
+        <mapping class="com.untitled1.entity.GbHelpInfo"/>
+        <mapping class="com.untitled1.entity.GbHelpType"/>
+        <mapping class="com.untitled1.entity.GbLanguage"/>
+        <mapping class="com.untitled1.entity.GbLoginLogs"/>
+        <mapping class="com.untitled1.entity.GbTheme"/>
+        <mapping class="com.untitled1.entity.GbUserBooks"/>
+        <mapping class="com.untitled1.entity.GbUserCollectBooks"/>
+        <mapping class="com.untitled1.entity.GbUserInfo"/>
+        <mapping class="com.untitled1.entity.GbUserLogin"/>
+        <mapping class="com.untitled1.entity.GbUserRelate"/>
+        <mapping class="com.untitled1.entity.GbUserScrap"/>
+
+        <!--endregion-->
+
+        <!--region SqlServer 数据库连接配置-->
+
+        <!--&lt;!&ndash;sqlServer 数据库连接驱动类(需要 jdbc 的 jar 包)&ndash;&gt;-->
+        <!--<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>-->
+        <!--&lt;!&ndash;sqlServer 数据库连接字符串&ndash;&gt;-->
+        <!--<property name="connection.url">jdbc:sqlserver://10.1.1.172:1433;databaseName=master</property>-->
+
+        <!--endregion-->
+
+        <!--下面是数据库表-->
+
+    </session-factory>
+</hibernate-configuration>
