@@ -1,4 +1,4 @@
-package com.untitled1.dao;
+package com.TestJsp.dao;
 
 import org.apache.log4j.Logger;
 
